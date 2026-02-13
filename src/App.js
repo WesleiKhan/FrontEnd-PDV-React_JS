@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Login from "./pages/user/Login";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
+import Register from "./pages/user/Register";
+import BoxStart from "./components/box/BoxStart";
+import BoxFinish from "./components/box/BoxFinish";
+import ListProducts from "./components/product/ListProducts";
+import MakeSale from "./components/sale/MakeSale";
+import FinishSale from "./components/sale/FinishSale";
+import BoxDetailsContainer from "./pages/box/BoxDetailsContainer";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          <Route path="/home" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route path="/box/start" element={<BoxStart />} />
+          <Route path="/box/finish" element={<BoxFinish />} />
+          <Route path="/box/details" element={<BoxDetailsContainer />} />
+
+          <Route path="/products" element={<ListProducts />} />
+
+          <Route path="/sale/make" element={<MakeSale />} />
+          <Route path="/sale/finish" element={<FinishSale />} />
+
+      </Routes>
   );
 }
 
