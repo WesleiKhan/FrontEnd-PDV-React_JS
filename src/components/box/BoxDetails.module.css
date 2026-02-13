@@ -1,0 +1,17 @@
+.parente {
+    display: flex;
+    flex-direction: column;
+    background-color: dimgray;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1,h2,h3,p {
+    margin: 0;
+}

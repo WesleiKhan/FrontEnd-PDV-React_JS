@@ -1,0 +1,51 @@
+.parent {
+
+    background-color: white;
+
+    width: 80vw;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    color: #F2F2F2;
+
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #1E1F22;
+}
+
+td:first-child,
+th:first-child {
+    text-align: left;
+
+}
+
+.table tbody tr {
+    background-color: #2C2F33;
+    cursor: pointer;
+}
+
+.table, th, td {
+    border: #1E1F22;
+}
+
+
+

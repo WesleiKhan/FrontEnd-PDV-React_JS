@@ -1,0 +1,23 @@
+.parent_back {
+    width: 3%;
+    height: 3vh;
+    margin-left: 1%;
+    color: black;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+.child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+
+    font-size: 1.5vw;
+}
