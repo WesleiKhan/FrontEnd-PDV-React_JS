@@ -1,0 +1,87 @@
+.parent {
+    display: flex;
+    margin: 0;
+}
+
+.container_borde_left {
+    background-color: #1E1F22;
+
+    display: flex;
+    justify-content: center;
+
+    width: 18%;
+}
+
+.container_left {
+    display: flex;
+    flex-direction: column;
+    background-color: #2C2F33;
+
+    width: 85%;
+
+    border-radius: 10px;
+    align-items: center;
+    gap: 3%;
+}
+
+.container_left button {
+    background-color: #2C2F33;
+    color: #F2F2F2;
+    width: 200px;
+    height: 60px;
+
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container_collum_right {
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_top_right {
+    display: flex;
+    justify-content: center;
+
+    height: 10vh;
+    background-color: #1E1F22;
+
+    border-radius: 2px;
+
+}
+
+.container_top_right h2 {
+    color: #F2F2F2;
+    margin: 0;
+}
+
+
+.container_middle_showList {
+    width: 100%;
+    height: 65vh;
+
+    max-height: 65vh;
+    overflow-y: auto;    /* cria barra vertical */
+    overflow-x: auto;    /* cria barra horizontal se precisar */
+
+}
+
+.container_valueSale {
+    height: 25vh;
+    color: #F2F2F2;
+
+}
+
+.container_valueSale h2 {
+    font-size: 2.2vw;
+    margin: 0;
+}
+
+.container_valueSale h1 {
+    font-size: 2.8vw;
+    margin: 0;
+}
+
+
+

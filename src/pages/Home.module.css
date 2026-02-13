@@ -1,0 +1,41 @@
+.parent {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_top {
+    display: flex;
+    gap: 1%;
+    background-color: dimgray;
+    height: 5vh;
+}
+
+p {
+    margin: 0;
+    cursor: pointer;
+    color: inherit;        /* mantém a cor normal */
+    text-decoration: none;
+
+    width: 4%;
+}
+
+.container_principal {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 120px;
+
+
+}
+
+h1 {
+    margin: 0;
+}
