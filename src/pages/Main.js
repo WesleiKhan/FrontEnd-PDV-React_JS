@@ -1,4 +1,4 @@
-import styles from "./Dashboard.module.css";
+import styles from "./Main.module.css";
 import ButtonAction from "../components/Several/ButtonAction";
 import {useBoxOpened} from "../components/hook/useBoxOpened";
 
