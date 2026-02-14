@@ -1,4 +1,4 @@
-import {useGetProducts} from "../hook/useGetProducts";
+
 import FormatedCoin from "../../utils/FormatedCoin";
 
 import sttyles from "./ListProducts.module.css"

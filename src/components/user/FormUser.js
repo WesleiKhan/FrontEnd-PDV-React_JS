@@ -29,6 +29,8 @@ function FormUser({typeForm}) {
         async function handleRegisterAndLogin(e) {
         e.preventDefault();
 
+        alert("submit disparou");
+
         const userData = {
             name,
             password,

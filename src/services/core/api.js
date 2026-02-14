@@ -1,7 +1,8 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "http://localhost:8080", // backend Spring
+    //baseURL: "http://localhost:8080", // backend Spring
+    baseURL: "http://192.168.100.9:8080",
     headers: {
         "Content-Type": "application/json",
     }
