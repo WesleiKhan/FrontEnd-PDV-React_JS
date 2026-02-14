@@ -22,7 +22,7 @@ function FormUser({typeForm}) {
 
         if (box === null) return;
 
-        navigate(box ? "/dashboard" : "/home");
+        navigate(box ? "/main" : "/home");
     }, [box, isLogged, navigate]);
 
 

@@ -1,7 +1,7 @@
 import './App.css';
 import Login from "./pages/user/Login";
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+import Main from "./pages/Main";
 import Home from "./pages/Home";
 import Register from "./pages/user/Register";
 import BoxStart from "./components/box/BoxStart";
@@ -19,7 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/home" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/main" element={<Main />} />
 
           <Route path="/box/start" element={<BoxStart />} />
           <Route path="/box/finish" element={<BoxFinish />} />

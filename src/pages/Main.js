@@ -8,7 +8,7 @@ import FormatedCoin from "../utils/FormatedCoin";
 import TableProduct from "../components/product/TableProduct";
 import {useState} from "react";
 
-function Dashboard() {
+function Main() {
 
     const [isLogged, setIsLogged] = useState(true);
 
@@ -104,4 +104,4 @@ function Dashboard() {
     )
 }
 
-export default Dashboard;
+export default Main;
