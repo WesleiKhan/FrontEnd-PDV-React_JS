@@ -64,11 +64,11 @@ function FormUser({typeForm}) {
 
     return (
         <div className={styles.page_container}>
-            <div className={styles.registerAndlogin_container} >
+            <div className={styles.page_container_childOne}>
                 <form className={styles.registerAndlogin_form} onSubmit={handleRegisterAndLogin}>
 
                     <input
-                        className={styles.input}
+                        className={styles.inputs}
                         type="text"
                         placeholder= "username"
                         value={name}
@@ -76,7 +76,7 @@ function FormUser({typeForm}) {
                     />
 
                     <input
-                        className={styles.input}
+                        className={styles.inputs}
                         type="password"
                         placeholder="password"
                         value={password}
