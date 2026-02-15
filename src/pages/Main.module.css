@@ -83,5 +83,13 @@
     margin: 0;
 }
 
+.pdv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vw;
+    margin: 0;
+}
+
 
 

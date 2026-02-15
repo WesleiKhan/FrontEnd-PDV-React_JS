@@ -2,7 +2,7 @@ import styles from "./Main.module.css";
 import ButtonAction from "../components/Several/ButtonAction";
 import {useBoxOpened} from "../components/hook/useBoxOpened";
 
-import {useLocation, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 import FormatedCoin from "../utils/FormatedCoin";
 import TableProduct from "../components/product/TableProduct";
@@ -10,6 +10,7 @@ import {useState} from "react";
 import {
     useGetInfoProductsSale
 } from "../components/hook/useGetInfoProductsSale";
+import {DeleteInfosOfProductsSale} from "../services/sale/SaleService";
 
 function Main() {
 
@@ -29,8 +30,9 @@ function Main() {
     if (!box) return <p>Carregando...</p>;
     if (error) return <p>Erro...</p>;
 
-    if (!infoProductsOfSale.products || infoProductsOfSale.valueTotal == null) {
-        return <p>Dados da venda não encontrados</p>;
+    if (!infoProductsOfSale?.products ||
+        infoProductsOfSale?.valueTotal == null) {
+
     }
 
     console.log(infoProductsOfSale);
@@ -48,18 +50,26 @@ function Main() {
 
                 <div className={styles.container_valueSale}>
                     <h2>
-                        Valor Total Da Venda
+                        {infoProductsOfSale?.valueTotal != null
+                            ? "Valor Total Da Venda"
+                            : " "}
+
                     </h2>
                     <h1>
-                        {FormatedCoin(infoProductsOfSale.valueTotal)}
+                        {infoProductsOfSale?.valueTotal != null
+                            ? FormatedCoin(infoProductsOfSale.valueTotal)
+                            : " "}  {/* placeholder quando nulo */}
                     </h1>
                 </div>
 
 
                 <div className={styles.container_middle_showList}>
-                    <TableProduct
-                        products={infoProductsOfSale.products}
-                    />
+                    {infoProductsOfSale?.products?.length > 0 ? (
+                        <TableProduct products={infoProductsOfSale.products} />
+                    ) : (
+                        <h1 className={styles.pdv}>PDV</h1>  // placeholder
+                        // quando nulo
+                    )}
                 </div>
 
 
@@ -88,6 +98,17 @@ function Main() {
                     <ButtonAction
                         url={"/box/finish"}
                         type={"Encerrar Caixar"}
+                    />
+
+                    <ButtonAction
+                        url={"/main"}
+                        type="Encerrar Venda"
+                        onClick={async () => {
+                            const result = await DeleteInfosOfProductsSale();
+                            console.log(result);
+
+                            window.location.reload();
+                        }}
                     />
                 </div>
             </div>

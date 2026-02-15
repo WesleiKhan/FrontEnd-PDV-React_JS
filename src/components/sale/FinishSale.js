@@ -96,7 +96,6 @@ function FinishSale(props) {
 
             console.log(response);
             navigate("/main")
-
         }catch (error) {
 
             console.error("Erro:", error.response?.data || error.message);
