@@ -1,32 +1,44 @@
 import {useBoxOpened} from "../hook/useBoxOpened";
 
-import {useLocation, useNavigate } from "react-router-dom";
-import {useState} from "react";
+import {useNavigate } from "react-router-dom";
+import {useEffect, useState} from "react";
 
 import {MakeSale} from "../../services/sale/SaleService"
 
 import styles from "./Sale.module.css"
 
 import FormatedCoin from "../../utils/FormatedCoin";
-import ButtonBack from "../Several/ButtonBack";
+import {useGetInfoProductsSale} from "../hook/useGetInfoProductsSale";
 
 function FinishSale(props) {
+
+    const infoProductsOfSale = useGetInfoProductsSale();
 
     const navigate = useNavigate();
 
     const dateHour = new Date().toLocaleString("pt-BR");
-
-    const location = useLocation();
-    const state = location.state || {};
-
-    const { products, total } = state;
 
     const {box, error} = useBoxOpened(true);
 
     const [payments, setPayments] = useState({});
     const [valueSale, setValueSale] = useState("");
 
-    const [remainingTotal, setRemainingTotal] = useState(Number(total.toFixed(2)));
+    const [remainingTotal, setRemainingTotal] = useState(0);
+
+    useEffect(() => {
+        if (infoProductsOfSale) {
+            setRemainingTotal(
+                Number(infoProductsOfSale.valueTotal.toFixed(2))
+            );
+        }
+    }, [infoProductsOfSale]);
+
+    // SÓ AQUI VERIFICA
+    if (!infoProductsOfSale) {
+        return <p>Carregando venda...</p>;
+    }
+
+    const products = infoProductsOfSale.products.map(p => p.id);
 
     function registerPayment(type) {
 
@@ -52,7 +64,7 @@ function FinishSale(props) {
         setValueSale("");
     }
 
-    if (!products || total == null) {
+    if (!products || infoProductsOfSale.valueTotal == null) {
         return <p>Dados da venda não encontrados</p>;
     }
 
@@ -96,7 +108,7 @@ function FinishSale(props) {
         <div className={styles.parent}>
 
             <div className={styles.top_bar}>
-                <h1>Total Da Venda: {FormatedCoin(total)}</h1>
+                <h1>Total Da Venda: {FormatedCoin(infoProductsOfSale.valueTotal)}</h1>
                 <h2>{dateHour}</h2>
             </div>
 

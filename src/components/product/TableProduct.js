@@ -1,9 +1,9 @@
-import styles from "./ListProducts.module.css";
+import styles from "./TableProduct.module.css";
 import FormatedCoin from "../../utils/FormatedCoin";
 
 function TableProduct({ products }) {
     return (
-        <div className={styles.parent_table}>
+        <div>
             <table className={styles.table}>
                 <thead>
                 <tr>

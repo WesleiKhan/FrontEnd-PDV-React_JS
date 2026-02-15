@@ -26,7 +26,7 @@ function BoxStart(){
             const response = await startBox(boxDate);
 
             console.log(response)
-            navigate("/dashboard");
+            navigate("/main");
         }catch (error) {
             console.error("Erro:", error.response?.data || error.message);
         }

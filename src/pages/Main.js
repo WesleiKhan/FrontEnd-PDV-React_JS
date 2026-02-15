@@ -7,41 +7,33 @@ import {useLocation, useNavigate } from "react-router-dom";
 import FormatedCoin from "../utils/FormatedCoin";
 import TableProduct from "../components/product/TableProduct";
 import {useState} from "react";
+import {
+    useGetInfoProductsSale
+} from "../components/hook/useGetInfoProductsSale";
 
 function Main() {
+
+    const infoProductsOfSale = useGetInfoProductsSale();
 
     const [isLogged, setIsLogged] = useState(true);
 
     const navigate = useNavigate();
 
-    const location = useLocation();
-    const state = location.state || {};
-
-    const {
-        productsSale = [],
-        total = 0
-    } = state;
-
-    const products = productsSale.map(product => product.id)
-
     const {box, error} = useBoxOpened(isLogged);
 
     function endSale() {
-        navigate("/sale/finish", {
-            state: {
-                products,
-                total
-            }
-        });
+        navigate("/sale/finish");
 
     }
 
     if (!box) return <p>Carregando...</p>;
     if (error) return <p>Erro...</p>;
 
-    if (!products || total == null) {
+    if (!infoProductsOfSale.products || infoProductsOfSale.valueTotal == null) {
         return <p>Dados da venda não encontrados</p>;
     }
+
+    console.log(infoProductsOfSale);
 
     console.log(box);
 
@@ -59,14 +51,14 @@ function Main() {
                         Valor Total Da Venda
                     </h2>
                     <h1>
-                        {FormatedCoin(total)}
+                        {FormatedCoin(infoProductsOfSale.valueTotal)}
                     </h1>
                 </div>
 
 
                 <div className={styles.container_middle_showList}>
                     <TableProduct
-                        products={productsSale}
+                        products={infoProductsOfSale.products}
                     />
                 </div>
 
