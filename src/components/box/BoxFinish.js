@@ -33,7 +33,7 @@ function BoxFinish() {
 
     return (
 
-        <div >
+        <div className={styles.parent}>
 
             <BoxDetails
                 operator={box.operator.name}
@@ -45,7 +45,11 @@ function BoxFinish() {
                 credito={box.payments.CREDITO}
             />
 
-            <button onClick={action}>Finalizar</button>
+            <div className={styles.child}>
+                <button className={`${styles.button_finally} ${styles.cancel}`} onClick={() => navigate(-1)}>Cancelar</button>
+                <button className={`${styles.button_finally} ${styles.finally_box}`} onClick={action} >Finalizar Caixa</button>
+            </div>
+
 
         </div>
     )
