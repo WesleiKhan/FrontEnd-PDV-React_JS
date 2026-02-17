@@ -36,7 +36,7 @@ function BoxFinish() {
         <div className={styles.parent}>
 
             <BoxDetails
-                operator={box.operator.name}
+                operator={box.operator}
                 startDate={box.startDate}
                 totalValue={box.totalValue}
                 dinheiro={box.payments.DINHEIRO}
