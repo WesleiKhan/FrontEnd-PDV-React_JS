@@ -1,16 +1,97 @@
 .parente {
     display: flex;
     flex-direction: column;
-    background-color: dimgray;
-    width: 50vw;
+    height: 100%;
+    width: 100%;
+}
+
+.child_top {
+    background-color: #1E1F22;
+    display: flex;
+    align-items: center;
+
+    color: #F2F2F2;
+    font-size: 25px;
+}
+
+.child_info_total_money_by_type {
+    display: flex;
     justify-content: center;
     align-items: center;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 25vh;
+    gap: 3%;
 }
+
+.container_money {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 20vh;
+    width: 22vw;
+
+    border-radius: 10px;
+}
+
+.dinheiro {
+    background-color: #2E8B57;
+}
+
+.pix {
+    background-color: #4DB8FF;
+}
+
+.debito {
+    background-color: #5FBF4A;
+}
+
+.credito {
+    background-color: #F28C38;
+}
+
+.total_value {
+    background-color: burlywood;
+}
+
+.container_rest_infmortaion {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 60vh;
+
+    gap: 3%;
+
+}
+
+.container_rest_infmortaion_child {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+}
+
+.container_rest_infmortaion_childTwo {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    color: #F2F2F2;
+
+}
+
+.container_rest_infmortaion_Grafic {
+    color: #F2F2F2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60vh;
+    width: 72%;
+}
+
 
 h1,h2,h3,p {
     margin: 0;

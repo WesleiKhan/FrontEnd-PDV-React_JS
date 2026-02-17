@@ -17,7 +17,6 @@ function BoxDetailsContainer() {
 
     return (
         <div>
-            <ButtonBack/>
             <BoxDetails
                 operator={box.operator}
                 startDate={box.startDate}
