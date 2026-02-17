@@ -96,13 +96,8 @@ function Main() {
                     />
 
                     <ButtonAction
-                        url={"/box/finish"}
-                        type={"Encerrar Caixar"}
-                    />
-
-                    <ButtonAction
                         url={"/main"}
-                        type="Encerrar Venda"
+                        type="Cancelar Venda"
                         onClick={async () => {
                             const result = await DeleteInfosOfProductsSale();
                             console.log(result);
@@ -110,6 +105,13 @@ function Main() {
                             window.location.reload();
                         }}
                     />
+
+                    <ButtonAction
+                        url={"/box/finish"}
+                        type={"Encerrar Caixar"}
+                    />
+
+
                 </div>
             </div>
 
