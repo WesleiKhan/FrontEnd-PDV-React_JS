@@ -64,7 +64,7 @@ function MakeSale () {
         <div>
             <ButtonBack/>
             <div className={styles.parent}>
-                <div>
+                <div className={styles.list_Products}>
                     <ListProducts
                         objects={productsGet}
                         onSelectProduct={addProduct}

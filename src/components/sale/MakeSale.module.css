@@ -4,6 +4,15 @@
     align-items: center;
 }
 
+.list_Products {
+    width: 80%;
+    height: 65vh;
+
+    max-height: 65vh;
+    overflow-y: auto;    /* cria barra vertical */
+    overflow-x: auto;
+}
+
 .button_OK {
 
 }
