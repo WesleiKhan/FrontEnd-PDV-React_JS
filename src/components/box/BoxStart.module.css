@@ -1,17 +1,38 @@
-.container_Box {
-    background-color: white;
-    width: 50vw;
-    height: 50vh;
+.parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 90vh;
+
+    color: #F2F2F2;
+    gap: 1rem;
+}
+
+.container_Box {
+    background-color: #1E1F22;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 30%;
+    height: 30%;
+
+    border-radius: 15px;
 
 }
 
+.form_selected {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
 .container_Users {
-    background-color: black;
+    background-color: #2C2F33;
     width: 10%;
     border-radius: 5px;
 
@@ -19,7 +40,11 @@
 }
 
 .words_for_Users {
-    font-size: 20px;
-    padding: 5px;
+    background-color: #2C2F33;
+    color: #F2F2F2;
+    font-size: 30px;
+
+    border-radius: 10px;
+
 
 }

@@ -10,7 +10,7 @@ function SelectObjects({objects, value, onChange}) {
                     onChange={onChange}
             >
                 <option value="" disabled>
-                    Selecione...
+                    Operadores
                 </option>
 
                 {objects.map(object => (

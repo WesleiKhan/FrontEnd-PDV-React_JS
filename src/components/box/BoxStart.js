@@ -38,21 +38,25 @@ function BoxStart(){
     return (
         <div>
             <ButtonBack/>
-            <div className={styles.container_Box}>
-
-                <h1>Selecione o Operador Do Caixa</h1>
-
-                <form onSubmit={startNewBox}>
-                    <div className={styles.container_Users}>
-                        <SelectObjects
-                            objects={users}
-                            value={idOperator}
-                            onChange={(e) => setOperator(e.target.value)}/>
-                    </div>
-                    <button type="submit" className={styles.words_for_Users}> Start Box </button>
-                </form>
-
+            <div className={styles.parent}>
+                <div>
+                    <h1>Selecione o Operador Do Caixa</h1>
+                </div>
+                <div className={styles.container_Box}>
+                    <form
+                        className={styles.form_selected}
+                        onSubmit={startNewBox}>
+                        <div className={styles.container_Users}>
+                            <SelectObjects
+                                objects={users}
+                                value={idOperator}
+                                onChange={(e) => setOperator(e.target.value)}/>
+                        </div>
+                        <button type="submit" className={styles.words_for_Users}> Start Box </button>
+                    </form>
+                </div>
             </div>
+
         </div>
 
     )
