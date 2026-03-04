@@ -10,6 +10,10 @@ import ListProducts from "./components/product/ListProducts";
 import MakeSale from "./components/sale/MakeSale";
 import FinishSale from "./components/sale/FinishSale";
 import BoxDetailsContainer from "./pages/box/BoxDetailsContainer";
+import FormProduct from "./components/product/FormProduct";
+import RegisterProduct from "./pages/product/RegisterProduct";
+import UpdateProduct from "./pages/product/UpdateProduct";
+import ProductsToEdit from "./pages/product/ProductsToEdit";
 
 
 function App() {
@@ -25,10 +29,14 @@ function App() {
           <Route path="/box/finish" element={<BoxFinish />} />
           <Route path="/box/details" element={<BoxDetailsContainer />} />
 
+          <Route path="/products/register" element={<RegisterProduct />} />
+          <Route path="/products/update/:id" element={<UpdateProduct />} />
+          <Route path="/products/to/update/" element={<ProductsToEdit />} />
           <Route path="/products" element={<ListProducts />} />
 
           <Route path="/sale/make" element={<MakeSale />} />
           <Route path="/sale/finish" element={<FinishSale />} />
+
 
       </Routes>
   );

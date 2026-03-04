@@ -14,7 +14,9 @@ function Home() {
                 >
                     Start Box
                 </p>
-                <p>
+                <p
+                    onClick={() => navigate("/products/to/update/")}
+                >
                     Edit Products
                 </p>
             </div>

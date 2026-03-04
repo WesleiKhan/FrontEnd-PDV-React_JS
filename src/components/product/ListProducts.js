@@ -4,12 +4,13 @@ import FormatedCoin from "../../utils/FormatedCoin";
 import styles from "./ListProducts.module.css"
 import {useState} from "react";
 
-function ListProducts ({objects, onSelectProduct}) {
+function ListProducts ({objects, onSelectProduct, typeAction}) {
 
     const [productToSend, setProductToSend] = useState();
 
     function action(product) {
-        setProductToSend(product);
+
+            setProductToSend(product);
     }
 
     if (!objects) return <p>Carregando...</p>;
@@ -38,13 +39,25 @@ function ListProducts ({objects, onSelectProduct}) {
                     ))}
                     </tbody>
                 </table>
+            {typeAction === "MakeSale" &&(
                 <button
-                    className={styles.button}
+                    className={styles.button_add}
                     disabled={!productToSend} // Desabilita se nada for selecionado
                     onClick={() => onSelectProduct(productToSend)}
                 >
                     Adicionar
                 </button>
+            )}
+
+            {typeAction === "EditProduct" && (
+                <button
+                    className={`${styles.button_add} ${styles.button_Edit}`}
+                    disabled={!productToSend} // Desabilita se nada for selecionado
+                    onClick={() => onSelectProduct(productToSend.id)}
+                >
+                    Editar
+                </button>
+            )}
         </div>
     )
 }

@@ -68,6 +68,7 @@ function MakeSale () {
                     <ListProducts
                         objects={productsGet}
                         onSelectProduct={addProduct}
+                        typeAction={"MakeSale"}
                     />
                 </div>
             </div>
