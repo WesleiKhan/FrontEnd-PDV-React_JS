@@ -14,6 +14,7 @@ import FormProduct from "./components/product/FormProduct";
 import RegisterProduct from "./pages/product/RegisterProduct";
 import UpdateProduct from "./pages/product/UpdateProduct";
 import ProductsToEdit from "./pages/product/ProductsToEdit";
+import ProductMain from "./pages/product/ProductMain";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/box/finish" element={<BoxFinish />} />
           <Route path="/box/details" element={<BoxDetailsContainer />} />
 
+          <Route path="/products/main" element={<ProductMain/>} />
           <Route path="/products/register" element={<RegisterProduct />} />
           <Route path="/products/update/:id" element={<UpdateProduct />} />
           <Route path="/products/to/update/" element={<ProductsToEdit />} />
