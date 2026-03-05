@@ -5,6 +5,8 @@ import {
 } from "../../services/product/ProductService";
 import {useNavigate} from "react-router-dom";
 
+import styles from "./FormProduct.module.css"
+
 function FormProduct({typeForm, id}) {
 
     const navigate = useNavigate();
@@ -50,28 +52,31 @@ function FormProduct({typeForm, id}) {
 
 
     return (
-        <div>
-            <form onSubmit={handleRegisterAndUpdateProduct}>
-                <input
-                    type="text"
-                    placeholder="Product Name"
-                    value={productName}
-                    onChange={e => setProductName(e.target.value)}/>
-                <input
-                    type="number"
-                    placeholder="Quantity"
-                    value={quantity}
-                    step="1"
-                    onChange={e => setQuantity(e.target.value)}/>
-                <input
-                    type="number"
-                    placeholder="Value"
-                    value={value}
-                    step="0.01"
-                    onChange={e => setValue(e.target.value)}/>
+        <div className={styles.parent}>
+            <div className={styles.child}>
+                <form className={styles.form_product}  onSubmit={handleRegisterAndUpdateProduct}>
+                    <input
+                        type="text"
+                        placeholder="Nome Do Produto"
+                        value={productName}
+                        onChange={e => setProductName(e.target.value)}/>
+                    <input
+                        type="number"
+                        placeholder="Quantidade"
+                        value={quantity}
+                        step="1"
+                        onChange={e => setQuantity(e.target.value)}/>
+                    <input
+                        type="number"
+                        placeholder="Valor"
+                        value={value}
+                        step="0.01"
+                        onChange={e => setValue(e.target.value)}/>
 
-                <button type="submit">Register</button>
-            </form>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+
         </div>
     )
 }
