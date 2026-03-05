@@ -1,0 +1,15 @@
+.parent {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.butto_register {
+    background-color: #4DB8FF;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
