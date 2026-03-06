@@ -21,7 +21,7 @@ function BoxFinish() {
             const response = await finishBox(box.id)
 
             console.log(response)
-            navigate("/home")
+            navigate("/")
         }catch (error) {
             console.log("Erro:", error.response?.data || error.message);
         }
