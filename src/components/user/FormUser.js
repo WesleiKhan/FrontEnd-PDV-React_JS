@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { loginUser, registerUser } from "../../services/user/UserService";
 import {useBoxOpened} from "../hook/useBoxOpened";
+import SelectObjects from "../Several/SelectObjects";
 
 
 function FormUser({typeForm}) {
@@ -12,6 +13,9 @@ function FormUser({typeForm}) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [isLogged, setIsLogged] = useState(false);
+    const [role, setRole] = useState("");
+
+    const roles = ["ROLE_MANAGER", "ROLE_OPERATOR_BOX"]
 
     const navigate = useNavigate();
 
@@ -35,6 +39,10 @@ function FormUser({typeForm}) {
             password,
         }
 
+        if (typeForm === "REGISTER") {
+            userData.role = role;
+        }
+
         try {
             if (typeForm === "LOGIN") {
                 const response = await loginUser(userData);
@@ -54,7 +62,7 @@ function FormUser({typeForm}) {
                 const response = await registerUser(userData);
                 console.log("Cadastro OK:", response.data);
 
-                navigate("/login");
+                navigate("/home");
             }
         } catch (error) {
             console.error("Erro:", error.response?.data || error.message);
@@ -83,6 +91,23 @@ function FormUser({typeForm}) {
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
+                    {typeForm === "REGISTER" && (
+                        <select
+                            className={styles.inputs}
+                            value={role}
+                            onChange={e => setRole(e.target.value)}
+                        >
+                            <option value="" disabled>
+                                ROLES
+                            </option>
+
+                            {roles.map((role) => (
+                                <option>
+                                    {role}
+                                </option>
+                            ))}
+                        </select>
+                    )}
 
                     <button type="submit" className={styles.button}>{typeForm}</button>
                 </form>
