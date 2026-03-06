@@ -26,7 +26,12 @@ function FormUser({typeForm}) {
 
         if (box === null) return;
 
-        navigate(box ? "/main" : "/home");
+        if (box) {
+            navigate("/main")
+        } else if (box === false) {
+            navigate("/home")
+        }
+
     }, [box, isLogged, navigate]);
 
 
@@ -52,7 +57,6 @@ function FormUser({typeForm}) {
                 localStorage.setItem("refresh_token", refresh_token);
 
                 console.log("Login realizado com sucesso");
-
 
                 setIsLogged(true);
 
