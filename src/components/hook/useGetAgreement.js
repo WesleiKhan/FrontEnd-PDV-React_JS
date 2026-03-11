@@ -3,7 +3,7 @@ import {getAgreements} from "../../services/agreement/AgreementService";
 
 export function useGetAgreement() {
 
-    const [agreement, setAgreement] = useState([]);
+    const [agreements, setAgreement] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -14,5 +14,5 @@ export function useGetAgreement() {
             .finally(() => setLoading(false));
     }, []);
 
-    return {agreement, loading, error};
+    return {agreements};
 }

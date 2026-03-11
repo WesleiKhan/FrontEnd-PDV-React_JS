@@ -15,3 +15,7 @@ export function updateAgreement(id, data) {
 export function deleteAgreement(id) {
     return api.delete(`/agreement/delete/${id}`);
 }
+
+export function saveAgreementOnRedis(data) {
+    return api.post(`/agreement/save/redis`, data);
+}

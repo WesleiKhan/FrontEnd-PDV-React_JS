@@ -15,6 +15,8 @@ import RegisterProduct from "./pages/product/RegisterProduct";
 import UpdateProduct from "./pages/product/UpdateProduct";
 import ProductsToEdit from "./pages/product/ProductsToEdit";
 import ProductMain from "./pages/product/ProductMain";
+import TableAgreements from "./components/agreement/TableAgreements";
+import SelectAgreement from "./components/agreement/SelectAgreement";
 
 
 function App() {
@@ -39,7 +41,8 @@ function App() {
           <Route path="/sale/make" element={<MakeSale />} />
           <Route path="/sale/finish" element={<FinishSale />} />
 
-
+          <Route path="/agreement/agreements" element={<TableAgreements/>} />
+          <Route path="/agreement/select" element={<SelectAgreement/>} />
       </Routes>
   );
 }

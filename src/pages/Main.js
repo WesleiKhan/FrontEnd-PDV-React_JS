@@ -11,6 +11,7 @@ import {
     useGetInfoProductsSale
 } from "../components/hook/useGetInfoProductsSale";
 import {DeleteInfosOfProductsSale} from "../services/sale/SaleService";
+import {useGetAgreement} from "../components/hook/useGetAgreement";
 
 function Main() {
 
@@ -21,6 +22,7 @@ function Main() {
     const navigate = useNavigate();
 
     const {box, error} = useBoxOpened(isLogged);
+
 
     function endSale() {
         navigate("/sale/finish");
@@ -83,6 +85,11 @@ function Main() {
                     <ButtonAction
                         type={"Encerrar Venda"}
                         onClick={endSale}
+                    />
+
+                    <ButtonAction
+                        url={"/agreement/select"}
+                        type={"Selecionar Cliente"}
                     />
 
                     <ButtonAction
