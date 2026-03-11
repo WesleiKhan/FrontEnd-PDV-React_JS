@@ -42,12 +42,15 @@
 
 .container_top_right {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
     height: 10vh;
     background-color: #1E1F22;
 
     border-radius: 2px;
+
+    gap: 20px;
 
 }
 

@@ -12,6 +12,7 @@ import {
 } from "../components/hook/useGetInfoProductsSale";
 import {DeleteInfosOfProductsSale} from "../services/sale/SaleService";
 import {useGetAgreement} from "../components/hook/useGetAgreement";
+import {useGetAgreementSelect} from "../components/hook/useGetAgreementSelect";
 
 function Main() {
 
@@ -23,13 +24,15 @@ function Main() {
 
     const {box, error} = useBoxOpened(isLogged);
 
+    const {agreement} = useGetAgreementSelect();
+
 
     function endSale() {
         navigate("/sale/finish");
 
     }
 
-    if (!box) return <p>Carregando...</p>;
+
     if (error) return <p>Erro...</p>;
 
     if (!infoProductsOfSale?.products ||
@@ -47,7 +50,9 @@ function Main() {
             <div className={styles.container_collum_right}>
 
                 <div className={styles.container_top_right}>
-                    <h2>Operador Do Caixa - Ativo: ({box.operator ?? "-"})</h2>
+                    <h2>Operador Do Caixa - Ativo: ({box?.operator ?? "-"})</h2>
+                    <h2>Cliente - Ativo: ({agreement?.customer?.name ?? "-"})</h2>
+
                 </div>
 
                 <div className={styles.container_valueSale}>

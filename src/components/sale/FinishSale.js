@@ -9,8 +9,11 @@ import styles from "./Sale.module.css"
 
 import FormatedCoin from "../../utils/FormatedCoin";
 import {useGetInfoProductsSale} from "../hook/useGetInfoProductsSale";
+import {useGetAgreementSelect} from "../hook/useGetAgreementSelect";
 
 function FinishSale(props) {
+
+    const {agreement} = useGetAgreementSelect()
 
     const infoProductsOfSale = useGetInfoProductsSale();
 
@@ -92,7 +95,7 @@ function FinishSale(props) {
         console.log(saleDate);
 
         try {
-            const response = await MakeSale(saleDate);
+            const response = await MakeSale(agreement?.id ,saleDate);
 
             console.log(response);
             navigate("/main")

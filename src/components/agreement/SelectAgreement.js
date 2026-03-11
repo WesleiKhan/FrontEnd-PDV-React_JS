@@ -4,10 +4,13 @@ import {saveAgreementOnRedis} from "../../services/agreement/AgreementService";
 import ButtonBack from "../Several/ButtonBack";
 import styles from "../agreement/SelectAgreement.module.css";
 import TableAgreements from "./TableAgreements";
+import {useNavigate} from "react-router-dom";
 
 function SelectAgreement() {
 
     const {agreements} = useGetAgreement();
+
+    const navigate = useNavigate();
 
     async function addAgreement(agreement) {
 
@@ -16,6 +19,7 @@ function SelectAgreement() {
             const response = await saveAgreementOnRedis(agreement)
 
             console.log(response)
+            navigate("/main")
         }catch(error) {
             console.error("Erro:", error.response?.data || error.message);
         }
@@ -31,7 +35,7 @@ function SelectAgreement() {
                 <div className={styles.list_Agreements}>
                     <TableAgreements
                         agreements={agreements}
-                        onSelectProduct={addAgreement()}
+                        onSelectProduct={addAgreement}
                     />
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import {api} from "../core/api"
 
-export function MakeSale (saleDate) {
-    return api.post("/sale/make", saleDate)
+export function MakeSale (id, saleDate) {
+    return api.post(`/sale/make/${id}`, saleDate)
 }
 
 export function ToWriteInfosOfProductsSale (infosProductsSale) {
