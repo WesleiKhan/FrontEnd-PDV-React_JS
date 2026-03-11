@@ -1,4 +1,4 @@
-import styles from "./FormUser.module.css"
+import styles from "./FormEmployee.module.css"
 import {useEffect, useState} from "react";
 
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import {useBoxOpened} from "../hook/useBoxOpened";
 
 
 
-function FormUser({typeForm}) {
+function FormEmployee({typeForm}) {
 
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
@@ -120,4 +120,4 @@ function FormUser({typeForm}) {
     )
 }
 
-export default FormUser;
+export default FormEmployee;

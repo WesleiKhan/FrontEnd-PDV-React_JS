@@ -2,7 +2,7 @@
 import styles from "./BoxStart.module.css"
 import {startBox} from "../../services/box/BoxService";
 import SelectObjects from "../Several/SelectObjects";
-import {useUsers} from "../hook/useUsers";
+import {useEmployees} from "../hook/useEmployees";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import ButtonBack from "../Several/ButtonBack";
@@ -10,7 +10,7 @@ import ButtonBack from "../Several/ButtonBack";
 
 function BoxStart(){
 
-    const { users, loading, error } = useUsers();
+    const { employees, loading, error } = useEmployees();
     const [ idOperator, setOperator] = useState("");
 
     const navigate = useNavigate();
@@ -48,7 +48,7 @@ function BoxStart(){
                         onSubmit={startNewBox}>
                         <div className={styles.container_Users}>
                             <SelectObjects
-                                objects={users}
+                                objects={employees}
                                 value={idOperator}
                                 onChange={(e) => setOperator(e.target.value)}/>
                         </div>

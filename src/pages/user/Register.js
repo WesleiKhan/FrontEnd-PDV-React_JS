@@ -1,4 +1,4 @@
-import FormUser from "../../components/user/FormUser";
+import FormEmployee from "../../components/user/FormEmployee";
 
 
 function Register(){
@@ -7,7 +7,7 @@ function Register(){
 
     return (
         <div>
-            <FormUser typeForm={typeForm}/>
+            <FormEmployee typeForm={typeForm}/>
         </div>
     )
 }

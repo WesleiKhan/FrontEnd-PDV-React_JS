@@ -1,4 +1,4 @@
-import FormUser from "../../components/user/FormUser";
+import FormEmployee from "../../components/user/FormEmployee";
 
 function Login() {
 
@@ -6,7 +6,7 @@ function Login() {
 
     return (
         <div>
-            <FormUser typeForm={typeForm} />
+            <FormEmployee typeForm={typeForm} />
         </div>
     )
 }

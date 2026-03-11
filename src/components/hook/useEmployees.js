@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { viewEmployees } from "../../services/employee/EmployeeService";
 
-export function useUsers() {
+export function useEmployees() {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
