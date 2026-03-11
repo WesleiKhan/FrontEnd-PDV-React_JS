@@ -3,9 +3,9 @@ import {useEffect, useState} from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { loginUser, registerUser } from "../../services/user/UserService";
+import { loginEmployee, registerEmployee } from "../../services/employee/EmployeeService";
 import {useBoxOpened} from "../hook/useBoxOpened";
-import SelectObjects from "../Several/SelectObjects";
+
 
 
 function FormUser({typeForm}) {
@@ -50,7 +50,7 @@ function FormUser({typeForm}) {
 
         try {
             if (typeForm === "LOGIN") {
-                const response = await loginUser(userData);
+                const response = await loginEmployee(userData);
                 const { token, refresh_token } = response.data;
 
                 localStorage.setItem("token", token);
@@ -63,7 +63,7 @@ function FormUser({typeForm}) {
                 console.log(box);
 
             } else {
-                const response = await registerUser(userData);
+                const response = await registerEmployee(userData);
                 console.log("Cadastro OK:", response.data);
 
                 navigate("/home");

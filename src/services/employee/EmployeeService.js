@@ -1,17 +1,17 @@
 import { api } from "../core/api";
 
-export function registerUser(userData) {
+export function registerEmployee(userData) {
     return api.post("/user/create", userData);
 }
 
-export function updateUser(userData, id) {
+export function updateEmployee(userData, id) {
     return api.put(`/user/update/${id}`, userData);
 }
 
-export function viewUsers() {
+export function viewEmployees() {
     return api.get(`/user/users`);
 }
 
-export function loginUser(userData) {
+export function loginEmployee(userData) {
     return api.post("/user/login",userData);
 }

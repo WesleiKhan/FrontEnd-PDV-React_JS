@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { viewUsers } from "../../services/user/UserService";
+import { viewEmployees } from "../../services/employee/EmployeeService";
 
 export function useUsers() {
     const [users, setUsers] = useState([]);
@@ -7,7 +7,7 @@ export function useUsers() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        viewUsers()
+        viewEmployees()
             .then(res => setUsers(res.data))
             .catch(err => setError(err))
             .finally(() => setLoading(false));

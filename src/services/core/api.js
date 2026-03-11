@@ -11,7 +11,7 @@ export const api = axios.create({
 api.interceptors.request.use(config => {
     const token = localStorage.getItem("token");
 
-    const publicRoutes = ["/user/login", "/user/refresh"]
+    const publicRoutes = ["/employee/login", "/employee/refresh"]
 
     const isPublicRoute = publicRoutes.some(route =>
         config.url?.includes(route)
