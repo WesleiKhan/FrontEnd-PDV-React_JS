@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 
 import {MakeSale} from "../../services/sale/SaleService"
 
-import styles from "./Sale.module.css"
+import styles from "./FinishSale.module.css"
 
 import FormatedCoin from "../../utils/FormatedCoin";
 import {useGetInfoProductsSale} from "../hook/useGetInfoProductsSale";
@@ -31,6 +31,8 @@ function FinishSale(props) {
     const [installment, setInstallment] = useState(0);
 
     const installments = [1,2,3,4,5,6,7,8,9,10,11,12];
+
+    const [paymentType, setPaymentType] = useState(null);
 
     useEffect(() => {
         if (infoProductsOfSale) {
@@ -142,31 +144,60 @@ function FinishSale(props) {
                 <form className={styles.form_parent} onSubmit={handleFinishSale}>
 
                     <div className={styles.containerPaymentButtons}>
-                        <button className={`${styles.buttonsPaymnets} ${styles.pix}`} type="button" onClick={() => registerPayment("PIX")}>PIX</button>
-                        <button className={`${styles.buttonsPaymnets} ${styles.dinheiro}`} type="button" onClick={() => registerPayment("DINHEIRO")}>DINHEIRO</button>
-                        <button className={`${styles.buttonsPaymnets} ${styles.credito}`} type="button" onClick={() => registerPayment("CREDITO")}>CRÉDITO</button>
-                        <button className={`${styles.buttonsPaymnets} ${styles.debito}`} type="button" onClick={() => registerPayment("DEBITO")}>DÉBITO</button>
+
+                        <button className={`${styles.buttonsPaymnets} ${styles.pix} ${
+                            paymentType === "PIX" ? styles.selected : ""
+                        }`} type="button" onClick={() =>
+                            setPaymentType("PIX")}
+                        >PIX</button>
+
+                        <button className={`${styles.buttonsPaymnets} ${styles.dinheiro} ${
+                            paymentType === "DINHEIRO" ? styles.selected : ""
+                        }`} type="button" onClick={() =>
+                            setPaymentType("DINHEIRO")}
+                        >DINHEIRO</button>
+
+                        <button className={`${styles.buttonsPaymnets} ${styles.credito} ${
+                            paymentType === "CREDITO" ? styles.selected : ""
+                        }`} type="button" onClick={() =>
+                            setPaymentType("CREDITO")}
+                        >CRÉDITO</button>
+
+                        <button className={`${styles.buttonsPaymnets} ${styles.debito} ${
+                            paymentType === "DEBITO" ? styles.selected : ""
+                        }`} type="button" onClick={() =>
+                            setPaymentType("DEBITO")}
+                        >DÉBITO</button>
+
                     </div>
 
-                    <div>
-                        <select
-                            value={installment}
-                            onChange={e => setInstallment(Number(e.target.value))}
-                        >
-                            <option value="" disabled>
-                                Parcelas
-                            </option>
-
-                            {installments.map((item) => (
-                                <option
-                                key={item}
-                                value={item}
-                                >
-                                    {item}
+                    {paymentType === "CREDITO" && (
+                        <div className={styles.container_Installmet}>
+                            <select
+                                className={styles.installmet_Select}
+                                value={installment}
+                                onChange={e => setInstallment(Number(e.target.value))}
+                            >
+                                <option value="" >
+                                    Parcelas
                                 </option>
-                            ))}
-                        </select>
+
+                                {installments.map((item) => (
+                                    <option
+                                        key={item}
+                                        value={item}
+                                    >
+                                        {item}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
+
+                    <div className={styles.container_ButtonAddValue}>
+                        <button className={styles.buttonAddValue}  type="button" onClick={() => registerPayment(paymentType)}>Adicionar Pagamento</button>
                     </div>
+
 
                     <div className={styles.containerRemainingTotal}>
                         <div className={styles.containerRemainingTotalChild}>

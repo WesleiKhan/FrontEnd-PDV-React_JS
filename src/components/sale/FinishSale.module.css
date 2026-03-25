@@ -86,6 +86,12 @@
     padding: 15px 25px;
 }
 
+.selected {
+    border: 2px solid #00ff88;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+}
+
 .containerRemainingTotalChild {
     background-color: #2C2F33;
     color: #CFCFCF;
@@ -94,6 +100,24 @@
     justify-content: center;
 
     border-radius: 5px;
+}
+
+.container_Installmet {
+    display: flex;
+    justify-content: center;
+
+}
+.container_ButtonAddValue {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonAddValue {
+    background-color: #F2F2F2;
+}
+
+.installmet_Select {
+    font-size: 20px;
 }
 
 .inputContainer {
