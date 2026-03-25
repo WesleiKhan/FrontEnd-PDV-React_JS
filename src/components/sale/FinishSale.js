@@ -28,6 +28,10 @@ function FinishSale(props) {
 
     const [remainingTotal, setRemainingTotal] = useState(0);
 
+    const [installment, setInstallment] = useState(0);
+
+    const installments = [1,2,3,4,5,6,7,8,9,10,11,12];
+
     useEffect(() => {
         if (infoProductsOfSale) {
             setRemainingTotal(
@@ -55,10 +59,24 @@ function FinishSale(props) {
             return;
         }
 
-        setPayments(prev => ({
-            ...prev,
-            [type]: Number(((prev[type] || 0) + value).toFixed(2))
-        }));
+        setPayments(prev => {
+
+            const current =
+                typeof prev[type] === "object"
+                    ? prev[type].valuePayment
+                    : (prev[type] || 0);
+
+            return {
+                ...prev,
+                [type]: {
+                    valuePayment: Number((current + value).toFixed(2)),
+
+                    ...(type === "CREDITO" && installment
+                        ? { installments: installment }
+                        : {})
+                }
+            };
+        });
 
         setRemainingTotal(prev =>
             Number((prev - value).toFixed(2))
@@ -107,6 +125,7 @@ function FinishSale(props) {
     }
 
 
+
     return (
         <div className={styles.parent}>
 
@@ -127,6 +146,26 @@ function FinishSale(props) {
                         <button className={`${styles.buttonsPaymnets} ${styles.dinheiro}`} type="button" onClick={() => registerPayment("DINHEIRO")}>DINHEIRO</button>
                         <button className={`${styles.buttonsPaymnets} ${styles.credito}`} type="button" onClick={() => registerPayment("CREDITO")}>CRÉDITO</button>
                         <button className={`${styles.buttonsPaymnets} ${styles.debito}`} type="button" onClick={() => registerPayment("DEBITO")}>DÉBITO</button>
+                    </div>
+
+                    <div>
+                        <select
+                            value={installment}
+                            onChange={e => setInstallment(Number(e.target.value))}
+                        >
+                            <option value="" disabled>
+                                Parcelas
+                            </option>
+
+                            {installments.map((item) => (
+                                <option
+                                key={item}
+                                value={item}
+                                >
+                                    {item}
+                                </option>
+                            ))}
+                        </select>
                     </div>
 
                     <div className={styles.containerRemainingTotal}>
