@@ -17,6 +17,7 @@ import ProductsToEdit from "./pages/product/ProductsToEdit";
 import ProductMain from "./pages/product/ProductMain";
 import TableAgreements from "./components/agreement/TableAgreements";
 import SelectAgreement from "./components/agreement/SelectAgreement";
+import Update from "./pages/user/Update";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/update" element={<Update />} />
 
           <Route path="/home" element={<Home />} />
           <Route path="/main" element={<Main />} />

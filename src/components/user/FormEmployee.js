@@ -3,12 +3,16 @@ import {useEffect, useState} from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { loginEmployee, registerEmployee } from "../../services/employee/EmployeeService";
+import {
+    loginEmployee,
+    registerEmployee,
+    updateEmployee
+} from "../../services/employee/EmployeeService";
 import {useBoxOpened} from "../hook/useBoxOpened";
 
 
 
-function FormEmployee({typeForm}) {
+function FormEmployee({typeForm, idUser}) {
 
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
@@ -62,6 +66,10 @@ function FormEmployee({typeForm}) {
 
                 console.log(box);
 
+            }else if(typeForm === "UPDATE") {
+                const response = await updateEmployee(userData, idUser);
+                console.log(response.data);
+
             } else {
                 const response = await registerEmployee(userData);
                 console.log("Cadastro OK:", response.data);
@@ -95,7 +103,7 @@ function FormEmployee({typeForm}) {
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
-                    {typeForm === "REGISTER" && (
+                    {(typeForm === "REGISTER" || typeForm === "UPDATE") && (
                         <select
                             className={styles.inputs}
                             value={role}
@@ -106,7 +114,7 @@ function FormEmployee({typeForm}) {
                             </option>
 
                             {roles.map((role) => (
-                                <option>
+                                <option key={role} value={role}>
                                     {role}
                                 </option>
                             ))}
