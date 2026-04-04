@@ -1,4 +1,4 @@
-import FormEmployee from "../../components/user/FormEmployee";
+import FormEmployee from "../../components/employee/FormEmployee";
 
 function Login() {
 

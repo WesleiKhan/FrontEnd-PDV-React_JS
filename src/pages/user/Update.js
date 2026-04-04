@@ -1,4 +1,4 @@
-import FormEmployee from "../../components/user/FormEmployee";
+import FormEmployee from "../../components/employee/FormEmployee";
 import {useEmployees} from "../../components/hook/useEmployees";
 import SelectObjects from "../../components/Several/SelectObjects";
 import {useState} from "react";
