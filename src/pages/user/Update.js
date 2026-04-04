@@ -2,6 +2,7 @@ import FormEmployee from "../../components/user/FormEmployee";
 import {useEmployees} from "../../components/hook/useEmployees";
 import SelectObjects from "../../components/Several/SelectObjects";
 import {useState} from "react";
+import styles from "./Update.module.css"
 
 function Update() {
 
@@ -10,18 +11,21 @@ function Update() {
 
     const typeForm = "UPDATE";
     return (
-        <div>
-            <div>
+        <div className={styles.parent}>
+            <div className={styles.child1}>
                 <SelectObjects
                     objects={employees}
                     value={idOperator}
                     onChange={(e) => setIdOperator(e.target.value)}
                 />
             </div>
-            <FormEmployee
-                typeForm={typeForm}
-                idUser={idOperator}
-            />
+            <div>
+                <FormEmployee
+                    typeForm={typeForm}
+                    idUser={idOperator}
+                />
+            </div>
+
         </div>
     )
 }
