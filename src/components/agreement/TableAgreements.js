@@ -23,6 +23,7 @@ function TableAgreements({agreements, onSelectProduct, typeAction}) {
                     <th>CPF</th>
                     <th>CNPJ</th>
                     <th>CONTATO</th>
+                    <th>STATUS DO CONVENIO</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,7 @@ function TableAgreements({agreements, onSelectProduct, typeAction}) {
                         <td>{agreement.customer.cpf}</td>
                         <td>{agreement.customer.cnpj}</td>
                         <td>{agreement.customer.phoneNumber}</td>
+                        <td>{agreement.status}</td>
 
                     </tr>
                 ))}
