@@ -19,6 +19,16 @@ function Home() {
                 >
                     Products
                 </p>
+                <p
+                    onClick={() => navigate("/customer/register")}
+                >
+                    Customer register
+                </p>
+                <p
+                    onClick={() => navigate("/customer/update")}
+                >
+                    Customer Update
+                </p>
             </div>
             <div className={styles.container_principal}>
                 <h1>

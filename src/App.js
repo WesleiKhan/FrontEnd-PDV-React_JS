@@ -1,9 +1,9 @@
 import './App.css';
-import Login from "./pages/user/Login";
+import Login from "./pages/employee/Login";
 import { Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
 import Home from "./pages/Home";
-import Register from "./pages/user/Register";
+import Register from "./pages/employee/Register";
 import BoxStart from "./components/box/BoxStart";
 import BoxFinish from "./components/box/BoxFinish";
 import ListProducts from "./components/product/ListProducts";
@@ -17,7 +17,9 @@ import ProductsToEdit from "./pages/product/ProductsToEdit";
 import ProductMain from "./pages/product/ProductMain";
 import TableAgreements from "./components/agreement/TableAgreements";
 import SelectAgreement from "./components/agreement/SelectAgreement";
-import Update from "./pages/user/Update";
+import Update from "./pages/employee/Update";
+import RegisterCustomer from "./pages/customer/RegisterCustomer";
+import UpdateCustomer from "./pages/customer/UpdateCustomer";
 
 
 function App() {
@@ -42,6 +44,9 @@ function App() {
 
           <Route path="/sale/make" element={<MakeSale />} />
           <Route path="/sale/finish" element={<FinishSale />} />
+
+          <Route path="/customer/register" element={<RegisterCustomer />} />
+          <Route path="/customer/update" element={<UpdateCustomer />} />
 
           <Route path="/agreement/agreements" element={<TableAgreements/>} />
           <Route path="/agreement/select" element={<SelectAgreement/>} />
