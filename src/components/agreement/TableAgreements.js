@@ -2,12 +2,18 @@
 import styles from "./TableAgreements.module.css";
 import {useState} from "react";
 
-function TableAgreements({agreements, onSelectProduct, typeAction}) {
+function TableAgreements({agreements, onSelectAgreement, typeAction}) {
 
     const [agreementToSend, setAgreementToSend] = useState(null);
 
     function action(agreement) {
+
         setAgreementToSend(agreement);
+
+        if (typeAction === "UPDATE") {
+
+            onSelectAgreement(agreement.id);
+        }
     }
 
     if (!agreements) return <p>Carregando2...</p>;
@@ -42,13 +48,16 @@ function TableAgreements({agreements, onSelectProduct, typeAction}) {
                 ))}
                 </tbody>
             </table>
-            <button
-                className={styles.button_add}
-                disabled={!agreementToSend} // Desabilita se nada for selecionado
-                onClick={() => onSelectProduct(agreementToSend)}
-            >
-                Selecionar
-            </button>
+            {(typeAction !== "UPDATE") && (
+                <button
+                    className={styles.button_add}
+                    disabled={!agreementToSend} // Desabilita se nada for selecionado
+                    onClick={() => onSelectAgreement(agreementToSend)}
+                >
+                    Selecionar
+                </button>
+            )}
+
         </div>
     )
 }

@@ -20,6 +20,7 @@ import SelectAgreement from "./components/agreement/SelectAgreement";
 import Update from "./pages/employee/Update";
 import RegisterCustomer from "./pages/customer/RegisterCustomer";
 import UpdateCustomer from "./pages/customer/UpdateCustomer";
+import UpdateAgreement from "./pages/agreement/UpdateAgreement";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
 
           <Route path="/agreement/agreements" element={<TableAgreements/>} />
           <Route path="/agreement/select" element={<SelectAgreement/>} />
+          <Route path="/agreement/update" element={<UpdateAgreement />} />
       </Routes>
   );
 }

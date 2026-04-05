@@ -48,7 +48,7 @@ function FormEmployee({typeForm, idUser}) {
             password,
         }
 
-        if (typeForm === "REGISTER") {
+        if (typeForm === "REGISTER" || typeForm === "UPDATE") {
             userData.role = role;
         }
 

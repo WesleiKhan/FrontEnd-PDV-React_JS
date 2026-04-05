@@ -1,8 +1,8 @@
 import {api} from "../core/api";
 import {data} from "react-router-dom";
 
-export function registerAgreement(data) {
-    return api.post("/agreement/register", data);
+export function registerAgreement(data, id) {
+    return api.post(`/agreement/register/${id}`, data);
 }
 
 export function getAgreements() {
