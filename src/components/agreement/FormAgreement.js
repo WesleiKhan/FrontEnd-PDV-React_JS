@@ -22,7 +22,7 @@ function FormAgreement({typeForm, id}) {
         }
 
         if (typeForm === "REGISTER") {
-            const response = await registerAgreement(id, data);
+            const response = await registerAgreement(data, id);
 
             console.log(response);
         } else {

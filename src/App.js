@@ -21,6 +21,7 @@ import Update from "./pages/employee/Update";
 import RegisterCustomer from "./pages/customer/RegisterCustomer";
 import UpdateCustomer from "./pages/customer/UpdateCustomer";
 import UpdateAgreement from "./pages/agreement/UpdateAgreement";
+import RegisterAgreement from "./pages/agreement/RegisterAgreement";
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path="/customer/register" element={<RegisterCustomer />} />
           <Route path="/customer/update" element={<UpdateCustomer />} />
 
+          <Route path="/agreement/register" element={<RegisterAgreement />} />
           <Route path="/agreement/agreements" element={<TableAgreements/>} />
           <Route path="/agreement/select" element={<SelectAgreement/>} />
           <Route path="/agreement/update" element={<UpdateAgreement />} />
