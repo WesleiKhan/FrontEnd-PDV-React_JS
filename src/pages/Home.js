@@ -9,26 +9,18 @@ function Home() {
     return (
         <div className={styles.parent}>
             <div className={styles.container_top}>
-                <p
+                <button
+                    className={styles.smallButton}
                     onClick={() => navigate("/box/start")}
                 >
-                    Start Box
-                </p>
-                <p
-                    onClick={() => navigate("/products/main")}
+                    Iniciar Novo Caixa
+                </button>
+                <button
+                    className={styles.smallButton}
+                    onClick={() => navigate("/home/options")}
                 >
-                    Products
-                </p>
-                <p
-                    onClick={() => navigate("/customer/register")}
-                >
-                    Customer register
-                </p>
-                <p
-                    onClick={() => navigate("/customer/update")}
-                >
-                    Customer Update
-                </p>
+                   Opções
+                </button>
             </div>
             <div className={styles.container_principal}>
                 <h1>

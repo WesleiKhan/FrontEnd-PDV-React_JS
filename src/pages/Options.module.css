@@ -1,0 +1,43 @@
+.parent {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+.title {
+
+    background-color: #1E1F22;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 60px;
+
+    height: 8%;
+}
+
+.conatiner_parent_of_left_and_right {
+    display: flex;
+    flex-direction: row;
+    height: 92%;
+}
+
+.container_left {
+    background-color: #1E1F22;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    width: 18%;
+
+    gap: 1%;
+
+}
+
+.container_right {
+    width: 82%;
+}

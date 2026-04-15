@@ -10,13 +10,11 @@
     height: 5vh;
 }
 
-p {
-    margin: 0;
+.smallButton {
+    background-color: #2C2F33;
+    color: #F2F2F2;
     cursor: pointer;
-    color: inherit;        /* mantém a cor normal */
-    text-decoration: none;
-
-    width: 4%;
+    font-size: 20px;
 }
 
 .container_principal {

@@ -14,7 +14,7 @@ import FormProduct from "./components/product/FormProduct";
 import RegisterProduct from "./pages/product/RegisterProduct";
 import UpdateProduct from "./pages/product/UpdateProduct";
 import ProductsToEdit from "./pages/product/ProductsToEdit";
-import ProductMain from "./pages/product/ProductMain";
+import ChoiceMenu from "./pages/ChoiceMenu";
 import TableAgreements from "./components/agreement/TableAgreements";
 import SelectAgreement from "./components/agreement/SelectAgreement";
 import Update from "./pages/employee/Update";
@@ -22,6 +22,7 @@ import RegisterCustomer from "./pages/customer/RegisterCustomer";
 import UpdateCustomer from "./pages/customer/UpdateCustomer";
 import UpdateAgreement from "./pages/agreement/UpdateAgreement";
 import RegisterAgreement from "./pages/agreement/RegisterAgreement";
+import Options from "./pages/Options";
 
 
 function App() {
@@ -32,13 +33,14 @@ function App() {
           <Route path="/update" element={<Update />} />
 
           <Route path="/home" element={<Home />} />
+          <Route path="/home/options" element={<Options />} />
           <Route path="/main" element={<Main />} />
 
           <Route path="/box/start" element={<BoxStart />} />
           <Route path="/box/finish" element={<BoxFinish />} />
           <Route path="/box/details" element={<BoxDetailsContainer />} />
 
-          <Route path="/products/main" element={<ProductMain/>} />
+          <Route path="/products/main" element={<ChoiceMenu/>} />
           <Route path="/products/register" element={<RegisterProduct />} />
           <Route path="/products/update/:id" element={<UpdateProduct />} />
           <Route path="/products/to/update/" element={<ProductsToEdit />} />
